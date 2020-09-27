@@ -1,0 +1,29 @@
+﻿
+@{
+
+    Layout = "_Layout";
+}
+
+<div id="principalPeliculas">
+
+    <div id="pelis">
+        @foreach (var cat in Model.Categoria)
+        { 
+        <h1>Animaciones </h1>
+            foreach(var corto in cat.Cortometraje)
+            { 
+    <div>
+        <a class="imgPelicula" href="~/cortos/@corto.Nombre.Replace(" ","-")">
+            <img src="~/images/portadas/@(corto.Id)_pc.jpg" alt="@corto.Nombre">
+        </a>
+        <div class="nombrePelicula">
+            <p>@corto.Nombre</p>
+        </div>
+    </div>
+            }
+        }
+            
+    </div>
+
+</div>
+
